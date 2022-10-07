@@ -1,0 +1,100 @@
+<div class="container-fluid" [ngStyle]="!isDark?{'background-color': '#DDECF3'} : {'background-color': '#000000'}"
+  style="background-image: url('../assets/images/bg_img.png')">
+
+  <div class="content-wrap">
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav-flight-tab" data-bs-toggle="tab" data-bs-target="#nav-flight" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+          <span><img src="../assets/images/icons/fly.svg"></span> Flights</button>
+        <button class="nav-link" id="nav-stay-tab" data-bs-toggle="tab" data-bs-target="#nav-stay" type="button" role="tab" aria-controls="nav-stay" aria-selected="false">
+          <span><img src="../assets/images/icons/bed.svg"></span>Stay</button>
+        <button class="nav-link" id="nav-cars-tab" data-bs-toggle="tab" data-bs-target="#nav-cars" type="button" role="tab" aria-controls="nav-cars" aria-selected="false">
+          <span><img src="../assets/images/icons/car.svg"></span>Cars</button>
+        <button class="nav-link" id="nav-packages-tab" data-bs-toggle="tab" data-bs-target="#nav-packages" type="button" role="tab" aria-controls="nav-packages" aria-selected="false">
+          <span><img src="../assets/images/icons/package.svg"></span>Packages</button>
+        <button class="nav-link" id="nav-event-tab" data-bs-toggle="tab" data-bs-target="#nav-event" type="button" role="tab" aria-controls="nav-event" aria-selected="false">
+          <span><img src="../assets/images/icons/event.svg"></span>Events</button>
+        <button class="nav-link" id="nav-destination-tab" data-bs-toggle="tab" data-bs-target="#nav-destination" type="button" role="tab" aria-controls="nav-destination" aria-selected="false">
+          <span><img src="../assets/images/icons/destination.svg"></span>Destination</button>
+        <button class="nav-link" id="nav-experiecne-tab" data-bs-toggle="tab" data-bs-target="#nav-experiecne" type="button" role="tab" aria-controls="nav-experiecne" aria-selected="false">
+          <span><img src="../assets/images/icons/expreience.svg"></span>Experience</button>
+      </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div class="d-flex">
+            <div class="dropdown me-1">
+              <button class="btn-drop" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                Round Trip
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+            <div class="dropdown me-1">
+              <button class="btn-drop" id="dropdownMenuOffset1" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
+                1 Passenger
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+          </div>
+        <div class="d-flex mt-4 travel-details">
+          <div class="d-flex wrapper">
+            <div class="d-inline-block justify-content-center border border-dark border-2 img-wrap rounded"><img src="../assets/images/locationicon.svg"></div>
+            <div class="d-inline-block text-wrap">
+              <p class="minor-text">From Where</p>
+              <p class="major-text">Lagos,Nigeria</p>
+            </div>
+          </div>
+          <img class="divider" src="../assets/images/dividerIcon.svg">
+          <div class="d-flex wrapper">
+            <div class="d-inline-block justify-content-center border border-dark border-2 img-wrap rounded"><img src="../assets/images/locationicon.svg"></div>
+            <div class="d-inline-block text-wrap">
+              <p class="minor-text">To Where</p>
+              <p class="major-text">Abudhabi,Dubai</p>
+            </div>
+          </div>
+          <img class="divider" src="../assets/images/dividerIcon.svg">
+          <div class="d-flex wrapper">
+            <div class="d-inline-block justify-content-center border border-dark border-2 img-wrap rounded"><img src="../assets/images/dateIcon.svg"></div>
+            <div class="d-inline-block text-wrap">
+              <p class="minor-text">Leaving on</p>
+              <p class="major-text">28 Sep,2022</p>
+            </div>
+          </div>
+          <img class="divider" src="../assets/images/dividerIcon.svg">
+          <div class="d-flex wrapper">
+            <div class="d-inline-block justify-content-center border border-dark border-2 img-wrap rounded"><img src="../assets/images/dateIcon.svg"></div>
+            <div class="d-inline-block text-wrap">
+              <p class="minor-text">Returning on</p>
+              <p class="major-text">28 Oct, 2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+    </div>
+
+    <div class="explore-menu">
+      <h1>Explore Great Destinations</h1>
+      <div>
+        <ul class="nav">
+          <li class="nav-item active"  data-bs-toggle="tab" data-bs-target="#nav-beach"  role="tab" id="nav-beach-tab">BEACH</li>
+          <li class="nav-item"  role="tab" id="nav-adventure-tab"   data-bs-target="#nav-avdenture" data-bs-toggle="tab" >ADVENTURE</li>
+          <li class="nav-item" role="tab" id="nav-food-tab" data-bs-toggle="tab" data-bs-target="#nav-food" >FOOD</li>
+          <li class="nav-item" role="tab" id="nav-hicking-tab" data-bs-toggle="tab" data-bs-target="#nav-hicking">HICKING</li>
+          <li class="nav-item"  role="tab" id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#nav-all" >ALL</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--invert(1%) sepia(100%) saturate(6481%) hue-rotate(946deg) brightness(120%) contrast(153%)-->
