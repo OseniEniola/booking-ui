@@ -1,27 +1,41 @@
-<div class="container-fluid" [ngStyle]="!isDark?{'background-color': '#DDECF3'} : {'background-color': '#000000'}"
+<div class="container-fluid" [ngStyle]="isLight?{'background-color': '#DDECF3'} : {'background-color': '#000000'}"
   style="background-image: url('../assets/images/bg_img.png')">
 
   <div class="content-wrap">
+    <div class="left-sidebar">
+      <div class="wrap active"><img src="../assets/images/map.svg"></div>
+      <div class="wrap"><img src="../assets/images/globe.svg"></div>
+      <div class="wrap"><img src="../assets/images/info.svg"></div>
+      <div class="wrap"><img src="../assets/images/home.svg"></div>
+    </div>
+    <div class="right-sidebar">
+      <label class="switch">
+        <input [(ngModel)]="isLight" type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+
+      <div class="music" style="background-image: url('../assets/images/musicicon.svg')"></div>
+    </div>
     <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
         <button class="nav-link active" id="nav-flight-tab" data-bs-toggle="tab" data-bs-target="#nav-flight" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
           <span><img src="../assets/images/icons/fly.svg"></span> Flights</button>
         <button class="nav-link" id="nav-stay-tab" data-bs-toggle="tab" data-bs-target="#nav-stay" type="button" role="tab" aria-controls="nav-stay" aria-selected="false">
           <span><img src="../assets/images/icons/bed.svg"></span>Stay</button>
-        <button class="nav-link" id="nav-cars-tab" data-bs-toggle="tab" data-bs-target="#nav-cars" type="button" role="tab" aria-controls="nav-cars" aria-selected="false">
+        <button class="nav-link" id="nav-cars-tab" data-bs-toggle="tab" data-bs-target="#nav-flight" type="button" role="tab" aria-controls="nav-cars" aria-selected="false">
           <span><img src="../assets/images/icons/car.svg"></span>Cars</button>
-        <button class="nav-link" id="nav-packages-tab" data-bs-toggle="tab" data-bs-target="#nav-packages" type="button" role="tab" aria-controls="nav-packages" aria-selected="false">
+        <button class="nav-link" id="nav-packages-tab" data-bs-toggle="tab" data-bs-target="#nav-flight" type="button" role="tab" aria-controls="nav-packages" aria-selected="false">
           <span><img src="../assets/images/icons/package.svg"></span>Packages</button>
         <button class="nav-link" id="nav-event-tab" data-bs-toggle="tab" data-bs-target="#nav-event" type="button" role="tab" aria-controls="nav-event" aria-selected="false">
           <span><img src="../assets/images/icons/event.svg"></span>Events</button>
         <button class="nav-link" id="nav-destination-tab" data-bs-toggle="tab" data-bs-target="#nav-destination" type="button" role="tab" aria-controls="nav-destination" aria-selected="false">
           <span><img src="../assets/images/icons/destination.svg"></span>Destination</button>
-        <button class="nav-link" id="nav-experiecne-tab" data-bs-toggle="tab" data-bs-target="#nav-experiecne" type="button" role="tab" aria-controls="nav-experiecne" aria-selected="false">
+        <button class="nav-link" id="nav-experiecne-tab" data-bs-toggle="tab" data-bs-target="#nav-flight" type="button" role="tab" aria-controls="nav-experiecne" aria-selected="false">
           <span><img src="../assets/images/icons/expreience.svg"></span>Experience</button>
       </div>
     </nav>
     <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="tab-pane fade show active" id="nav-flight" role="tabpanel" aria-labelledby="nav-home-tab">
           <div class="d-flex">
             <div class="dropdown me-1">
               <button class="btn-drop" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="0,5">
@@ -76,9 +90,12 @@
               <p class="major-text">28 Oct, 2022</p>
             </div>
           </div>
+          <div class="search">
+            <img src="../assets/images/search.svg">
+          </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+      <div class="tab-pane fade" id="nav-event" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
       <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
     </div>
 
@@ -92,6 +109,39 @@
           <li class="nav-item" role="tab" id="nav-hicking-tab" data-bs-toggle="tab" data-bs-target="#nav-hicking">HICKING</li>
           <li class="nav-item"  role="tab" id="nav-all-tab" data-bs-toggle="tab" data-bs-target="#nav-all" >ALL</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="carousel-section">
+      <img class="info-icon" src="../assets/images/info.svg">
+      <ngb-carousel #ngcarousel>
+
+        <ng-template ngbSlide id="one">
+         <div class="d-flex item">
+           <div><img src="../assets/images/comingsoon.png"></div>
+           <div class="text-wrap">
+             <div class="row-1">Coming soon!</div>
+             <div class="row-2">Experience Dubai Shopping Festival this December</div>
+             <div class="row-3">Dec 19 - Dec 25</div>
+             <div class="row-4">Build your trip</div>
+           </div>
+         </div>
+        </ng-template>
+        <ng-template ngbSlide id="two">
+          <div class="d-flex item">
+            <div><img src="../assets/images/comingsoon.png"></div>
+            <div class="text-wrap">
+              <div class="row-1">Happening Live!</div>
+              <div class="row-2">Experience Portuagl Shopping Festival this December</div>
+              <div class="row-3">Nov 01</div>
+              <div class="row-4">Build your trip</div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+      <div class="control">
+        <button class="prev" (click)="getToPrev()">&#8592;</button>
+        <button class="next" (click)="goToNext()">&#8594;</button>
       </div>
     </div>
   </div>
